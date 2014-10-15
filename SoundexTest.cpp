@@ -1,9 +1,12 @@
+// This is an example from Test Driven Development with C++, a cool book
 #include <string>
+
+using std::string;
 
 class Soundex
 {
 public:
-  std::string encode(const std::string& word) const {
+  string encode(const string& word) const {
     return "";
   }
 };
