@@ -6,6 +6,10 @@ using std::string;
 class Primes
 {
 public:
+  bool isPrime(const int n) const {
+    return true; // STUB
+  }
+
   int nthPrime(const int n) const {
     return -42; // STUB
   }
@@ -24,6 +28,24 @@ TEST(PrimeTesting, FirstFivePrimesAreCorrect) {
 
 }
 
+TEST(PrimeTesting, SeveralPrimeNumbersArePrime) {
+  Primes primes;
+
+  ASSERT_TRUE(primes.isPrime(2));
+  ASSERT_TRUE(primes.isPrime(3));
+  ASSERT_TRUE(primes.isPrime(5));
+  ASSERT_TRUE(primes.isPrime(7));
+  ASSERT_TRUE(primes.isPrime(11));
+}
+
+TEST(PrimeTesting, SeveralCompositeNumbersAreNotPrime) {
+  Primes primes;
+
+  ASSERT_FALSE(primes.isPrime(4));
+  ASSERT_FALSE(primes.isPrime(6));
+  ASSERT_FALSE(primes.isPrime(8));
+  ASSERT_FALSE(primes.isPrime(9));
+}
 
 int main(int argc, char** argv) {
   // The following line must be executed to initialize Google Mock
