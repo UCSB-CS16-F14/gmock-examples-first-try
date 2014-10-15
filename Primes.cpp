@@ -7,7 +7,7 @@ class Primes
 {
 public:
   bool aIsDivisibleByB(const int a, const int b) const {
-    return false;
+    return (a%b==0);
   }
 
   bool isPrime(const int n) const {
