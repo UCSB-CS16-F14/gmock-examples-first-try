@@ -6,6 +6,10 @@ using std::string;
 class Primes
 {
 public:
+  bool aIsDivisibleByB(const int a, const int b) const {
+    return false;
+  }
+
   bool isPrime(const int n) const {
     return true; // STUB
   }
@@ -37,6 +41,23 @@ TEST(PrimeTesting, SeveralPrimeNumbersArePrime) {
   ASSERT_TRUE(primes.isPrime(7));
   ASSERT_TRUE(primes.isPrime(11));
 }
+
+TEST(PrimeTesting, TestAisDivisibleByBReturnsTrue) {
+  Primes primes;
+
+  ASSERT_TRUE(primes.aIsDivisibleByB(15,3));
+  ASSERT_TRUE(primes.aIsDivisibleByB(10,5));
+  ASSERT_TRUE(primes.aIsDivisibleByB(10,2));
+}
+
+TEST(PrimeTesting, TestAisDivisibleByBReturnsFalse) {
+  Primes primes;
+
+  ASSERT_FALSE(primes.aIsDivisibleByB(15,2));
+  ASSERT_FALSE(primes.aIsDivisibleByB(15,7));
+  ASSERT_FALSE(primes.aIsDivisibleByB(16,3));
+}
+
 
 TEST(PrimeTesting, SeveralCompositeNumbersAreNotPrime) {
   Primes primes;
