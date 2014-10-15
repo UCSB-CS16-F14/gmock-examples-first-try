@@ -11,11 +11,34 @@ public:
   }
 
   bool isPrime(const int n) const {
-    return true; // STUB
+    // loop from i, starting with n/2 and go down to 2
+    // for each of those i's do
+    //     check if its divisible.. if so: return false
+    //     otherwise: keep going
+    // if we get to end of the loop and haven't returned false, return true
+    //if(n < 2)
+    // return false;
+
+    for(int i = n/2; i >= 2; i--) {
+      if(aIsDivisibleByB(n, i))
+	return false;
+    }
+    return true;
+
   }
 
   int nthPrime(const int n) const {
-    return -42; // STUB
+    int i = 2;
+    int count = 0;
+
+    while(true) {
+      if(isPrime(i)) {
+	count++;
+	if(count == n)
+	  return i;
+      }
+      i++;
+    }
   }
 };
 
